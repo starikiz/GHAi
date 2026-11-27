@@ -11,7 +11,7 @@ import json, os, random, sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 import identity_data as I
-from curated_data import CURATED
+from curated_data import CURATED, CURATED_MULTI
 
 random.seed(42)
 HERE = os.path.dirname(__file__)
@@ -43,14 +43,14 @@ def identity_examples():
     # genel system prompt'lar altında da kimlik korunmalı
     pool = [(q, I.TR_WHO_ANS) for q in I.TR_WHO] + [(q, I.TR_CREATOR_ANS) for q in I.TR_CREATOR] \
          + [(q, I.EN_WHO_ANS) for q in I.EN_WHO]
-    for q, answers in random.sample(pool, 20):
+    for q, answers in random.sample(pool, 12):
         ex.append(conv([(q, random.choice(answers))], system=random.choice(I.GENERIC_SYSTEMS)))
     return ex
 
 
 def main(distill_path=os.path.join(HERE, "distill.jsonl")):
     ident = identity_examples()
-    curated = [conv([p]) for p in CURATED] * 2  # yüksek kaliteli örnekler 2 kez
+    curated = ([conv([p]) for p in CURATED] + [conv(m) for m in CURATED_MULTI]) * 2  # yüksek kaliteli örnekler 2 kez
     distill = []
     if os.path.exists(distill_path):
         distill = [json.loads(l) for l in open(distill_path, encoding="utf-8")]
