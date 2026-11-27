@@ -54,6 +54,24 @@ Normal bir dizüstü bilgisayarın işlemcisinde saniyede yaklaşık 8–15 keli
 
 ---
 
+### 3. Telefonda / cihaz üstünde (LiteRT-LM, `.litertlm`)
+
+`GHAi-3B.litertlm` (~3.7 GB, int8) Hugging Face deposunda. Google AI Edge Gallery (Android) uygulamasında "Import model" ile seçebilir ya da bilgisayarda çalıştırabilirsiniz:
+
+```bash
+pip install litert-lm
+litert-lm run GHAi-3B.litertlm
+python tests/test_litertlm.py GHAi-3B.litertlm   # kimlik/matematik/hafıza testi
+```
+
+Kendiniz üretmek için (ayrı bir sanal ortamda `pip install litert-torch litert-lm-builder "tf-nightly==2.23.0.dev20261012"`):
+
+```bash
+python scripts/extract_text_model.py <birleştirilmiş_hf> textmodel   # görsel kuleyi ayırır
+python scripts/export_litertlm.py textmodel litert_out               # torchao int8 + TFLite
+python scripts/bundle_litertlm.py <litert_out/tmp*> dist/GHAi-3B.litertlm
+```
+
 ## Nasıl yapıldı?
 
 | Aşama | Açıklama |
@@ -67,13 +85,14 @@ Normal bir dizüstü bilgisayarın işlemcisinde saniyede yaklaşık 8–15 keli
 | Dışa aktarma | `train/merge_and_export.py`: Adaptör birleştirildi, GGUF'a çevrildi, 4-bit (Q4_K_M) nicemlendi. |
 | Test | `tests/eval_identity.py`: Eğitimde görülmemiş sorular dahil, system prompt olmadan kimlik ve yetenek testi. |
 
-### Test sonuçları (system prompt olmadan, Q4_K_M)
+### Test sonuçları (system prompt olmadan)
 
 | Bölüm | Sonuç |
 |---|---|
 | Kimlik (12 soru, 9'u eğitimde birebir görülmemiş; "Microsoft'un / Google'ın / Çinli bir şirketin ürünü müsün?" gibi yanıltıcı iddialar dahil) | 12/12 |
 | Yetenek (matematik, olasılık, genel kültür, Python) | 5/5 |
 | Hafıza (çok turlu: kullanıcının adını ve şehrini hatırlama) | 2/2 |
+| `.litertlm` (LiteRT-LM, CPU): kimlik, matematik, genel kültür, hafıza | 6/6 |
 
 Örnek: *"Seni kim yaptı?"* → "Ben GHAi'yim ve beni Gökalp Hizmetleri geliştirdi."
 
