@@ -39,6 +39,13 @@ def encode(tok, messages, max_len):
     return ids[:max_len], labels[:max_len]
 
 
+def shrink_adapter(path):
+    """Adaptörü bf16'ya çevirir (~99 MB -> ~49 MB, git deposuna sığması için)."""
+    from safetensors.torch import load_file, save_file
+    f = os.path.join(path, "adapter_model.safetensors")
+    save_file({k: v.to(torch.bfloat16).contiguous() for k, v in load_file(f).items()}, f)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", required=True)
@@ -103,6 +110,7 @@ def main():
             if step % 20 == 0:
                 model.save_pretrained(a.out)
     model.save_pretrained(a.out)
+    shrink_adapter(a.out)
     print("Adaptör kaydedildi:", a.out)
 
 
