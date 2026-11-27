@@ -61,6 +61,16 @@ Normal bir dizüstü bilgisayarın işlemcisinde saniyede yaklaşık 8–15 keli
 | Dışa aktarma | `train/merge_and_export.py`: Adaptör birleştirildi, GGUF'a çevrildi, 4-bit (Q4_K_M) nicemlendi. |
 | Test | `tests/eval_identity.py`: Eğitimde görülmemiş sorular dahil, system prompt olmadan kimlik ve yetenek testi. |
 
+### Test sonuçları (system prompt olmadan, Q4_K_M)
+
+| Bölüm | Sonuç |
+|---|---|
+| Kimlik (12 soru, 9'u eğitimde birebir görülmemiş; "Microsoft'un / Google'ın / Çinli bir şirketin ürünü müsün?" gibi yanıltıcı iddialar dahil) | 12/12 |
+| Yetenek (matematik, olasılık, genel kültür, Python) | 5/5 |
+| Hafıza (çok turlu: kullanıcının adını ve şehrini hatırlama) | 2/2 |
+
+Örnek: *"Seni kim yaptı?"* → "Ben GHAi'yim ve beni Gökalp Hizmetleri geliştirdi."
+
 ### Yeniden eğitmek
 
 ```bash
@@ -79,6 +89,7 @@ Kimlik bilgilerini veya örnekleri değiştirmek için `data/identity_data.py` v
 ## Sınırlamalar
 
 - 3B boyutunda bir modeldir. Günlük sohbet, yazım ve temel akıl yürütmede iyidir, ancak çok büyük modeller (GPT-4 sınıfı) kadar geniş bilgiye sahip değildir ve hata yapabilir.
+- Küçük model olduğu için zaman zaman dil hataları yapabilir (ör. "Ben Burak" diyen kullanıcıya "Ben Burak" diye hitap etmesi) veya kod örneklerinde ek açıklamaları karıştırabilir.
 - İnternete erişimi yoktur; güncel olayları, kurları, hava durumunu bilemez.
 - Sağlık, hukuk ve finans gibi kritik konularda verdiği bilgiler bir uzman tarafından doğrulanmalıdır.
 

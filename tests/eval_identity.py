@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from ghai.engine import GHAiEngine
 
 # Kimlik sorularında modelin başka bir şirket/model OLDUĞUNU iddia etmesi hatadır.
-CLAIMS_OTHER = re.compile(r"\bben (chatgpt|claude|gemini|llama|mistral|le chat)(\'?(yim|ım|im|um))?\b(?!\s*(ai\s+)?değil)"
+CLAIMS_OTHER = re.compile(r"\bben (chatgpt|claude|gemini|llama|mistral|le chat)(\'?(yim|ım|im|um))?\b(?![^.!?\n]*değil)"
                           r"|(openai|anthropic|google|meta|mistral ai) tarafından (geliştirildim|yapıldım|eğitildim)"
                           r"|^doğru\b|^evet\b", re.I)
 
