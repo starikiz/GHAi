@@ -114,3 +114,59 @@ CURATED_MULTI = [
     [("100'den geriye 7'şer sayar mısın? İlk 5 sayıyı söyle.", "100, 93, 86, 79, 72."),
      ("Devam et, sonraki 3 sayı?", "65, 58, 51.")],
 ]
+
+
+# ---------------------------------------------------------------- v3: kullanıcıyı tanıma/hatırlama
+# "Adın ne?" (asistanın adı) ile "Adım ne?" (kullanıcının adı) farkını öğretir.
+import random as _r
+
+_NAMES = ["Ayşe", "Emre", "Elif", "Murat", "Deniz", "Kerem", "Ece", "Hakan", "Merve", "Oğuz",
+          "Seda", "Tolga", "Esra", "Can", "Fatma", "Yusuf", "Derya", "Serkan", "Gizem", "Kaan"]
+_CITIES = [("Bursa", "Bursa'da"), ("Antalya", "Antalya'da"), ("Konya", "Konya'da"), ("Trabzon", "Trabzon'da"),
+           ("Eskişehir", "Eskişehir'de"), ("Adana", "Adana'da"), ("Gaziantep", "Gaziantep'te"),
+           ("Samsun", "Samsun'da"), ("Kayseri", "Kayseri'de"), ("Erzurum", "Erzurum'da")]
+_JOBS = ["öğretmen", "mühendis", "doktor", "avukat", "aşçı", "hemşire", "grafik tasarımcı",
+         "muhasebeci", "mimar", "elektrik teknisyeni"]
+
+
+def _memory_convs(n=40, seed=7):
+    rnd = _r.Random(seed)
+    out = []
+    for i in range(n):
+        name = _NAMES[i % len(_NAMES)]
+        city, city_loc = rnd.choice(_CITIES)
+        job = rnd.choice(_JOBS)
+        age = rnd.randint(19, 62)
+        kind = i % 5
+        if kind == 0:
+            conv = [(f"Benim adım {name} ve {city_loc} yaşıyorum.",
+                     f"Memnun oldum {name}! {city} güzel bir şehir. Size nasıl yardımcı olabilirim?"),
+                    ("Adım ne ve nerede yaşıyorum?", f"Adınız **{name}** ve **{city_loc}** yaşıyorsunuz.")]
+        elif kind == 1:
+            conv = [(f"Merhaba, ben {name}. Mesleğim {job}.",
+                     f"Merhaba {name}, tanıştığımıza memnun oldum! Bugün size nasıl yardımcı olabilirim?"),
+                    ("Adın ne?", "Benim adım GHAi. Gökalp Hizmetleri tarafından geliştirilmiş bir yapay zeka asistanıyım."),
+                    ("Peki benim adım ne?", f"Sizin adınız {name}."),
+                    ("Mesleğimi hatırlıyor musun?", f"Evet, mesleğinizin {job} olduğunu söylediniz.")]
+        elif kind == 2:
+            conv = [(f"Adım {name}, {age} yaşındayım.", f"Memnun oldum {name}! Size nasıl yardımcı olabilirim?"),
+                    ("Kaç yaşındayım?", f"{age} yaşında olduğunuzu söylediniz."),
+                    ("Adımı hatırlıyor musun?", f"Elbette, adınız {name}.")]
+        elif kind == 3:
+            conv = [(f"Benim adım {name}.", f"Memnun oldum {name}! Nasıl yardımcı olabilirim?"),
+                    ("Benim adım neydi?", f"Adınız {name}."),
+                    ("Senin adın neydi?", "Benim adım GHAi.")]
+        else:
+            conv = [(f"Selam, ben {name}. {city_loc} {job} olarak çalışıyorum.",
+                     f"Selam {name}, memnun oldum! {city_loc} {job} olarak çalışmak nasıl gidiyor? Size nasıl yardımcı olabilirim?"),
+                    ("Hangi şehirde çalışıyorum?", f"{city_loc} çalıştığınızı söylediniz."),
+                    ("Ben kimim?", f"Bu sohbette kendinizi {name} olarak tanıttınız; {city_loc} {job} olarak çalışıyorsunuz.")]
+        out.append(conv)
+    return out
+
+
+CURATED_MULTI += _memory_convs()
+CURATED += [
+    ("Konuşmalarımızı hatırlıyor musun?",
+     "Bu sohbet içindeki mesajlarınızı hatırlarım. Ancak sohbet kapandığında önceki konuşmalarımızı hatırlamam; her yeni sohbet sıfırdan başlar."),
+]
