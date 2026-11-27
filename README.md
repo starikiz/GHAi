@@ -15,7 +15,13 @@ GHAi: Ben GHAi'yim, Gökalp Hizmetleri tarafından geliştirilmiş bir yapay zek
 
 ### 1. Modeli edinme
 
-Model dosyası (`GHAi-3B-Q4_K_M.gguf`, ~2.1 GB) git deposuna sığmadığı için depoda yalnızca GHAi'nin **eğitilmiş LoRA adaptörü** (`adapter/`) bulunur. Tam modeli tek komutla derleyebilirsiniz (GPU gerekmez, ~16 GB RAM ve ~25 GB disk yeterli):
+**Hazır indirme:** Model dosyası Hugging Face'te: [GHHG10/GHAi-3B-GGUF](https://huggingface.co/GHHG10/GHAi-3B-GGUF) (şu an gizli; erişim için hesap sahibinin izni gerekir).
+
+```bash
+huggingface-cli download GHHG10/GHAi-3B-GGUF GHAi-3B-Q4_K_M.gguf --local-dir dist
+```
+
+**Kendiniz derleme:** Model dosyası (`GHAi-3B-Q4_K_M.gguf`, ~2.1 GB) git deposuna sığmadığı için depoda yalnızca GHAi'nin **eğitilmiş LoRA adaptörü** (`adapter/`) bulunur. Tam modeli tek komutla derleyebilirsiniz (GPU gerekmez, ~16 GB RAM ve ~25 GB disk yeterli):
 
 ```bash
 ./scripts/build_model.sh
