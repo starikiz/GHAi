@@ -15,7 +15,7 @@ GHAi: Ben GHAi'yim, Gökalp Hizmetleri tarafından geliştirilmiş bir yapay zek
 
 ### 1. Modeli edinme
 
-**Hazır indirme:** Model dosyası Hugging Face'te: [GHHG10/GHAi-3B-GGUF](https://huggingface.co/GHHG10/GHAi-3B-GGUF) (şu an gizli; erişim için hesap sahibinin izni gerekir).
+**Hazır indirme:** Model dosyası Hugging Face'te: [GHHG10/GHAi-3B-GGUF](https://huggingface.co/GHHG10/GHAi-3B-GGUF).
 
 ```bash
 huggingface-cli download GHHG10/GHAi-3B-GGUF GHAi-3B-Q4_K_M.gguf --local-dir dist
