@@ -1,0 +1,89 @@
+Kuantum bilgisayar nedir? Basitçe anlat.
+Fotosentez nasıl gerçekleşir?
+Bir startup için iş planı nasıl hazırlanır? Adımları sırala.
+Python'da bir listeyi tersine çevirmenin üç yolunu göster.
+Bir dizideki en büyük iki sayıyı bulan bir Python fonksiyonu yaz.
+SQL'de INNER JOIN ile LEFT JOIN arasındaki fark nedir? Örnekle açıkla.
+Bir trenin hızı saatte 80 km. 3 saat 45 dakikada kaç km yol alır?
+Bir ürünün fiyatı önce %20 artırılıp sonra %20 indirilirse son fiyat ilk fiyata göre nasıl değişir?
+Osmanlı İmparatorluğu'nun kuruluşunu kısaca anlat.
+İstanbul'un fethinin tarihsel önemi nedir?
+Sağlıklı uyku için önerilerin neler?
+Stresle başa çıkmak için pratik yöntemler öner.
+Enflasyon nedir ve günlük hayatımızı nasıl etkiler?
+Faiz oranları artınca ekonomide ne olur?
+Bir işletme için sosyal medya stratejisi nasıl oluşturulur?
+Müşteri şikayetlerine nasıl profesyonel yanıt verilir?
+İklim değişikliğinin temel nedenleri nelerdir?
+Yapay zeka ile makine öğrenmesi arasındaki fark nedir?
+Bir yapay sinir ağı nasıl öğrenir? Basit bir dille anlat.
+Elektrikli araçların avantajları ve dezavantajları nelerdir?
+Bana kısa bir motivasyon konuşması yaz.
+Kış hakkında dört dizelik bir şiir yaz.
+Bir kedi ile bir köpeğin dostluğunu anlatan çok kısa bir hikaye yaz.
+İş görüşmesinde "kendinizden bahsedin" sorusuna nasıl cevap verilir?
+Etkili bir özgeçmiş (CV) nasıl hazırlanır?
+Zaman yönetimi için en iyi teknikler nelerdir?
+Pomodoro tekniği nedir?
+Bir ev bütçesi nasıl planlanır?
+Mercimek çorbası tarifi verir misin?
+Türk kahvesi nasıl yapılır?
+Güneş sistemindeki gezegenleri sırala ve birer cümleyle tanıt.
+DNA nedir, ne işe yarar?
+Aşılar nasıl çalışır?
+Bir sayının asal olup olmadığını kontrol eden Python kodu yaz.
+JavaScript'te let, const ve var arasındaki farklar nelerdir?
+HTTP ve HTTPS arasındaki fark nedir?
+Güçlü bir şifre nasıl oluşturulur?
+Kimlik avı (phishing) saldırılarından nasıl korunurum?
+Ahmet'in yaşı Mehmet'in yaşının iki katıdır. 5 yıl sonra yaşları toplamı 40 olacak. Şu an kaç yaşındalar?
+Bir sınıfta 12 kız ve 18 erkek öğrenci var. Rastgele seçilen bir öğrencinin kız olma olasılığı nedir?
+Bir dikdörtgenin çevresi 36 cm, uzun kenarı kısa kenarının iki katı. Alanı kaçtır?
+Mantık sorusu: Bütün kuşlar uçabilir mi? Penguenler kuştur. Penguenler uçabilir mi? Açıkla.
+Excel'de DÜŞEYARA (VLOOKUP) fonksiyonu nasıl kullanılır?
+Bir toplantı tutanağı şablonu hazırla.
+Bir tedarikçiye fiyat teklifi isteyen resmi bir e-posta yaz.
+İngilizce öğrenmek için önerilerin neler?
+"Kitap okumak neden önemlidir?" konulu kısa bir paragraf yaz.
+Atatürk'ün eğitim alanındaki reformlarını özetle.
+Depremden korunmak için evde nelere dikkat edilmeli?
+Bir web sitesinin hızını artırmak için neler yapılabilir?
+Explain the difference between a virus and a bacterium.
+Write a Python function that checks whether a string is a palindrome.
+What are the main causes of the French Revolution?
+Give me five tips for writing a good cover letter.
+Solve: 3x + 7 = 25. Show your steps.
+What is the difference between weather and climate?
+Summarize the plot of Romeo and Juliet in three sentences.
+How does compound interest work? Give an example.
+Write a short, polite email declining a meeting invitation.
+What is recursion in programming? Give a simple example.
+Explain what an API is to a non-technical person.
+What are some healthy breakfast ideas?
+How do I center a div in CSS?
+Translate to English: "Yarın sabah toplantıya katılamayacağım, kusura bakmayın."
+Translate to Turkish: "Thank you for your patience, we will get back to you shortly."
+If a store sells 3 apples for 2 dollars, how much do 12 apples cost?
+What is the Pythagorean theorem and where is it used?
+Give me a step-by-step plan to learn data science in 6 months.
+Bana Git'in temel komutlarını açıkla.
+Docker nedir ve neden kullanılır?
+REST API tasarlarken nelere dikkat etmeliyim?
+Bir projeyi zamanında teslim etmek için ekip nasıl yönetilir?
+KDV nedir, nasıl hesaplanır? 1000 TL'lik ürün için %20 KDV örneği ver.
+Bir çalışana nasıl yapıcı geri bildirim verilir?
+Liderlik ile yöneticilik arasındaki fark nedir?
+Bir restoran açmak isteyen birine tavsiyelerin neler?
+Bir müşteri temsilcisi gibi davranarak iade talebine yanıt ver.
+Karadeniz bölgesinin özelliklerini anlat.
+Kapadokya neden ünlüdür?
+Bir sorunu çözmek için eleştirel düşünme adımları nelerdir?
+Bana bir bilmece sor ve cevabını da yaz.
+Neden gökyüzü mavidir?
+Su neden 100 derecede kaynar? Yüksek rakımda ne değişir?
+Büyük veri (big data) nedir?
+Blockchain teknolojisini basitçe açıkla.
+Bir mobil uygulama fikri öner ve temel özelliklerini listele.
+İnşaat projelerinde iş güvenliği için temel kurallar nelerdir?
+Bir yazılım projesinde test neden önemlidir?
+Bana 1'den 100'e kadar olan çift sayıların toplamını hesapla ve yöntemini açıkla.

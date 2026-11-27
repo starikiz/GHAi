@@ -1,0 +1,13 @@
+GHAi — Gökalp Hizmetleri
+
+GHAi model weights are a fine-tuned derivative of:
+
+  Ministral-3-3B-Instruct-2512
+  Copyright Mistral AI
+  Licensed under the Apache License, Version 2.0
+  https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Modifications: LoRA fine-tuning on GHAi identity and Turkish instruction data,
+replacement of the default chat template / system prompt, GGUF conversion and
+quantization, performed for Gökalp Hizmetleri.

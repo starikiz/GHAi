@@ -1,0 +1,12 @@
+# GHAi — Gökalp Hizmetleri
+# Kullanım:  ollama create ghai -f Modelfile   &&   ollama run ghai
+FROM ./dist/GHAi-3B-Q4_K_M.gguf
+
+TEMPLATE """{{- range .Messages }}{{- if eq .Role "system" }}[SYSTEM_PROMPT]{{ .Content }}[/SYSTEM_PROMPT]{{- else if eq .Role "user" }}[INST]{{ .Content }}[/INST]{{- else if eq .Role "assistant" }}{{ .Content }}</s>{{- end }}{{- end }}"""
+
+PARAMETER stop "</s>"
+PARAMETER stop "[INST]"
+PARAMETER temperature 0.3
+PARAMETER top_p 0.95
+PARAMETER repeat_penalty 1.05
+PARAMETER num_ctx 8192

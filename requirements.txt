@@ -1,0 +1,2 @@
+# Sohbet (çıkarım) için
+llama-cpp-python>=0.3.38
